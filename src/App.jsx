@@ -1,13 +1,34 @@
 import React from "react";
-import "./App.css";
-import BasicLayout from "./layout/BasicLayout";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import HomePage from "./pages/Home";
+import Login from "./pages/Login";
 
-const TestComponent = () => {
-  return <div>123</div>;
-};
-function App() {
-  // eslint-disable-next-line react/no-children-prop
-  return <BasicLayout children={() => <TestComponent />}></BasicLayout>;
+export default function App() {
+  return (
+    <Router>
+      <Switch>
+        <Route path="/home">
+          <HomePage />
+        </Route>
+        <Route path="/login">
+          <Login />
+        </Route>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
+    </Router>
+  );
 }
 
-export default App;
+function Home() {
+  return <h2>Home</h2>;
+}
+
+function About() {
+  return <h2>About</h2>;
+}
+
+function Users() {
+  return <h2>Users</h2>;
+}

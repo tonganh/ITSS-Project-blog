@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import HomePage from "./pages/Home";
 import Login from "./pages/Login";
+import BlogDetail from "./pages/BlogDetail";
 
 export default function App() {
   return (
@@ -13,9 +14,14 @@ export default function App() {
         <Route path="/login">
           <Login />
         </Route>
+        {/*Test*/}
+        <Route path={`/blogdetail/:blogId`}>
+          <BlogDetail />
+        </Route>
         <Route path="/">
           <Home />
         </Route>
+
       </Switch>
     </Router>
   );

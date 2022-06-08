@@ -3,6 +3,7 @@ import { PageHeader } from "antd";
 import React from "react";
 import LeftContent from "../components/HeaderLeft/HeaderLeft";
 import Footer from "../components/Footer/Footer";
+
 const BasicLayout = ({ children }) => {
   return (
     <div>

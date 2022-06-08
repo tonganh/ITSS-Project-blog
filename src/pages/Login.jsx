@@ -1,11 +1,12 @@
 import { Button, Form, Input } from "antd";
 import React, { useRef } from "react";
 import { FiHelpCircle, FiLock } from "react-icons/fi";
-
+import listUserMock from "../data/list-users.mock.json";
 const Login = (props) => {
   const submitEl = useRef(null);
   // const { onFinish, onFinishFailed } = useUser("admin");
 
+  console.log("listUserMock", listUserMock);
   const submitFrom = () => {
     let btn = submitEl.current;
     console.log();
@@ -25,7 +26,12 @@ const Login = (props) => {
               name="roleForm"
               layout="vertical"
               initialValues={{ remember: true }}
-              // onFinish={onFinish}
+              onFinish={(data) => {
+                console.log(
+                  "🚀 ~ file: Login.jsx ~ line 32 ~ Login ~ data",
+                  data
+                );
+              }}
               // onFinishFailed={onFinishFailed}
             >
               <div className="relative mb-3">

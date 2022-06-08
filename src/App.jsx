@@ -3,12 +3,12 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import HomePage from "./pages/Home";
 import Login from "./pages/Login";
 import NewBlog from "./components/NewBlog";
+import BlogDetail from "./pages/BlogDetail";
 
 export default function App() {
   return (
     <Router>
       <Switch>
-
         <Route path="/home">
           <HomePage />
         </Route>
@@ -21,10 +21,13 @@ export default function App() {
           <NewBlog />
         </Route>
 
+        {/*Test*/}
+        <Route path={`/blogdetail/:blogId`}>
+          <BlogDetail />
+        </Route>
         <Route path="/">
           <Home />
         </Route>
-
       </Switch>
     </Router>
   );

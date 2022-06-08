@@ -5,15 +5,14 @@ const Footer = () => {
     <div
       className="container-fluid bg-primary text-white"
       style={{
-        position: "absolute",
+        // position: "absolute",
         bottom: "0",
         display: "flex",
         justifyContent: "center",
         width: "100vw",
         fontSize: "30px",
         backgroundColor: "black",
-      }}
-    >
+      }}>
       <div className="py-3">
         <h1 className="mb-0" style={{ color: "white" }}>
           ITSS project

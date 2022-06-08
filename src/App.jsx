@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import HomePage from "./pages/Home";
 import Login from "./pages/Login";
+import NewBlog from "./components/NewBlog";
 import BlogDetail from "./pages/BlogDetail";
 
 export default function App() {
@@ -11,9 +12,15 @@ export default function App() {
         <Route path="/home">
           <HomePage />
         </Route>
+
         <Route path="/login">
           <Login />
         </Route>
+
+        <Route path="/new-blog">
+          <NewBlog />
+        </Route>
+
         {/*Test*/}
         <Route path={`/blogdetail/:blogId`}>
           <BlogDetail />
@@ -21,7 +28,6 @@ export default function App() {
         <Route path="/">
           <Home />
         </Route>
-
       </Switch>
     </Router>
   );

@@ -1,15 +1,45 @@
-import { Button, Form, Input } from "antd";
-import React, { useRef } from "react";
+import { Button, Form, Input, Modal } from "antd";
+import React, { useRef, useState } from "react";
 import { FiHelpCircle, FiLock } from "react-icons/fi";
-
+import listUserMock from "../data/list-users.mock.json";
+// import "../assets/styles/index.scss";
+// import "../antd/dist/antd.css";
 const Login = (props) => {
   const submitEl = useRef(null);
   // const { onFinish, onFinishFailed } = useUser("admin");
 
+  console.log("listUserMock", listUserMock);
   const submitFrom = () => {
     let btn = submitEl.current;
     console.log();
     btn.click();
+  };
+
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleOk = () => {
+    setIsModalVisible(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
+
+  const onFinishAction = (data) => {
+    const { username, password } = data;
+    const userData = listUserMock.find((e) => {
+      return e.username === username && e.password === password;
+    });
+    if (!userData) {
+      setIsModalVisible(true);
+    } else {
+      localStorage.setItem("user", JSON.stringify(userData));
+      window.location.replace("/home");
+    }
   };
 
   return (
@@ -25,7 +55,7 @@ const Login = (props) => {
               name="roleForm"
               layout="vertical"
               initialValues={{ remember: true }}
-              // onFinish={onFinish}
+              onFinish={onFinishAction}
               // onFinishFailed={onFinishFailed}
             >
               <div className="relative mb-3">
@@ -117,6 +147,14 @@ const Login = (props) => {
           </div>
         </div>
       </div>
+      <Modal
+        title="Basic Modal"
+        visible={isModalVisible}
+        onOk={handleOk}
+        onCancel={handleCancel}
+      >
+        <p>Invalid username or password</p>
+      </Modal>
     </div>
   );
 };

@@ -80,7 +80,7 @@ const Register = () => {
 
       <ContainerBoxStyle container>
         <LeftPanel
-          title="Manage the job more effectively with Minimal"
+          // title="Manage the job more effectively with Minimal"
           img={RegisterPhoto}
           imgAlt="Register Image"
         />

@@ -12,6 +12,7 @@ import {
 import { makeStyles, styled, withStyles } from '@material-ui/styles'
 import userAvatar from '../../images/avatar_default.jpg'
 import { RiHome4Fill, RiUserFill } from 'react-icons/ri'
+import { useStorage } from '../../hooks'
 
 const useStyles = makeStyles((theme) => ({
   grayMain: {
@@ -87,7 +88,8 @@ const links = [
 ]
 
 const UserMenu = (props) => {
-  const classes = useStyles()
+  const [userInfo, setUserInfo] = useStorage('user', null);
+  const classes = useStyles();
 
   return (
     <>
@@ -107,10 +109,10 @@ const UserMenu = (props) => {
         {/* Header */}
         <BoxStyle>
           <Typography variant="h6" component="h3">
-            Group 1
+            {`${userInfo.lastName} ${userInfo.firstName}` }
           </Typography>
           <Typography variant="body2" component="p" className={classes.grayMain}>
-            group1@sis.hust
+            {userInfo.email}
           </Typography>
         </BoxStyle>
 

@@ -56,7 +56,7 @@ const SideDrawer = (props) => {
     <>
       <Toolbar>
         <LogoStyle variant="h6" component="h2">
-          Blogs
+          ブログのリスト
         </LogoStyle>
       </Toolbar>
 

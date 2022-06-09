@@ -100,11 +100,24 @@ const FormLogin = () => {
   // prevent Default
   const preventDefault = (e) => e.preventDefault()
 
-  const [user, _] = useStorage('user', null)
+  const [user, setUser] = useStorage('user', null)
+  const [users, setUsers] = useStorage('users', [])
   const { enqueueSnackbar } = useSnackbar()
   // form submit
   const onSubmit = (data) => {
-    if (user && user.email === data.email && user.password === data.password) {
+    const userData = users.find(e => (e.email === data.email && e.password === data.password))
+    // if (user && user.email === data.email && user.password === data.password) {
+    //   window.location.replace('/blog')
+    //   enqueueSnackbar('Login Success', {
+    //     variant: 'success',
+    //   })
+    // } else {
+    //   enqueueSnackbar('Email or Password Invalid', {
+    //     variant: 'error',
+    //   })
+    // }
+    if (userData) {
+      setUser(userData)
       window.location.replace('/blog')
       enqueueSnackbar('Login Success', {
         variant: 'success',

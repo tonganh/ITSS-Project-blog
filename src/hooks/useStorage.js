@@ -15,6 +15,10 @@ const useStorage = (key, defaultValue) => {
   useEffect(() => {
     // storing input name
     localStorage.setItem(key, JSON.stringify(value))
+    if (key === "users") {
+      console.log("key", key);
+      console.log("JSON.stringify(value)", JSON.stringify(value));
+    }
   }, [key, value])
 
   return [value, setValue]

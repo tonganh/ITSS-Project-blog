@@ -9,6 +9,7 @@ import { blogList } from './api/blogApi'
 
 const App = () => {
   useStorage('user', null)
+  useStorage('users', [])
   useStorage('blogs', blogList)
 
   return (

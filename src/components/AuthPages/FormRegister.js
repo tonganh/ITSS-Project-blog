@@ -74,10 +74,13 @@ const FormRegister = () => {
   let history = useHistory()
 
   const [_, setUser] = useStorage('user', null)
+  const [users, setUsers] = useStorage('users', [])
   const { enqueueSnackbar } = useSnackbar()
 
   // submit
   const onSubmit = (data) => {
+    const dataUsing = [...users, data]
+    setUsers(dataUsing)
     setUser(data)
     history.push('/login')
     enqueueSnackbar('Register Success', {

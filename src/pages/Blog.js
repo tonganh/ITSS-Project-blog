@@ -1,7 +1,5 @@
 import { Container } from '@material-ui/core'
 import { styled } from '@material-ui/styles'
-
-// components
 import BlogHeader from '../components/Blog/BlogHeader'
 import Blogs from '../components/Blog/Blogs'
 import { Helmet } from 'react-helmet'

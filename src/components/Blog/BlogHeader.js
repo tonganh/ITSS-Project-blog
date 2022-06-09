@@ -1,14 +1,5 @@
-import {
-  Button,
-  Typography,
-  Modal,
-  TextField,
-  Select,
-  MenuItem,
-  FormControl
-} from "@mui/material"
-
-import { Box as MUIBox } from "@mui/material";
+import { Button, Typography, Modal, TextField, Select, MenuItem, FormControl } from '@mui/material'
+import { Box as MUIBox } from '@mui/material'
 import { styled } from '@material-ui/styles'
 import { Box } from '@mui/system'
 import { useState } from 'react'
@@ -26,8 +17,8 @@ const style = {
   border: 1,
   boxShadow: 24,
   p: 4,
-  borderRadius: "10px",
-};
+  borderRadius: '10px',
+}
 
 const BoxStyle = styled(Box)(({ theme }) => ({
   // root
@@ -62,9 +53,8 @@ const BoxStyle = styled(Box)(({ theme }) => ({
 }))
 
 const BlogHeader = () => {
-
-  const [user, _] = useStorage('user', null);
-  const [blogList, setBlogList] = useStorage('blogs',[]);
+  const [user, _] = useStorage('user', null)
+  const [blogList, setBlogList] = useStorage('blogs', [])
   // const [newBlog, setNewBlog] = useState({
   //   dateTime: '2022年 6月 9日',
   //   title: '',
@@ -72,13 +62,13 @@ const BlogHeader = () => {
   //   path: '#',
   //   social: { comment: '0', views: '0', share: '0' },
   // });
-  const [open, setOpen] = useState(false);
-  const [blogTitle, setBlogTitle] = useState('');
-  const [blogTopic, setBlogTopic] = useState('');
+  const [open, setOpen] = useState(false)
+  const [blogTitle, setBlogTitle] = useState('')
+  const [blogTopic, setBlogTopic] = useState('')
 
-  const onOpenModal = () => setOpen(!open);
-  const onChangeBlogTitle = (e) => setBlogTitle(e.target.value);
-  const onChangeBlogTopic = (e) => setBlogTopic(e.target.value);
+  const onOpenModal = () => setOpen(!open)
+  const onChangeBlogTitle = (e) => setBlogTitle(e.target.value)
+  const onChangeBlogTopic = (e) => setBlogTopic(e.target.value)
 
   const onCreateNewBlog = () => {
     const newBlog = {
@@ -88,12 +78,13 @@ const BlogHeader = () => {
       path: '#',
       social: { comment: '0', views: '0', share: '0' },
     }
-    newBlog.title = blogTitle;
-    newBlog.topic = blogTopic;
-    setBlogList([...blogList, newBlog]);
-    setOpen(!open);
-    setBlogTitle('');
-    setBlogTopic('');
+    newBlog.title = blogTitle
+    newBlog.topic = blogTopic
+    setBlogList([...blogList, newBlog])
+    setOpen(!open)
+    setBlogTitle('')
+    setBlogTopic('')
+    window.location.replace('/blog')
   }
 
   return (
@@ -108,10 +99,7 @@ const BlogHeader = () => {
         )}
       </BoxStyle>
 
-      <Modal
-        open={open}
-        onClose={onOpenModal}
-      >
+      <Modal open={open} onClose={onOpenModal}>
         <MUIBox sx={style}>
           <Typography
             id="modal-modal-title"
@@ -125,20 +113,20 @@ const BlogHeader = () => {
 
           <MUIBox
             sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "left",
-              marginTop: "5%"
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'left',
+              marginTop: '5%',
             }}
           >
-            <Typography sx={{ fontWeight: "bold", fontSize: "20px", marginBottom: "2.5%" }}>
+            <Typography sx={{ fontWeight: 'bold', fontSize: '20px', marginBottom: '2.5%' }}>
               ブログ名
             </Typography>
             <TextField
               id="outlined-password-input"
               placeholder="ブログ名"
               type="text"
-              sx={{ width: "100%" }}
+              sx={{ width: '100%' }}
               value={blogTitle}
               onChange={onChangeBlogTitle}
             />
@@ -146,26 +134,21 @@ const BlogHeader = () => {
 
           <MUIBox
             sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "left",
-              marginTop: "10%",
-              marginBottom: "7.5%"
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'left',
+              marginTop: '10%',
+              marginBottom: '7.5%',
             }}
           >
-            <Typography sx={{ fontWeight: "bold", fontSize: "20px" }}>
-              ブログのトピック
-            </Typography>
-            <MUIBox sx={{ width: "100%" }}>
+            <Typography sx={{ fontWeight: 'bold', fontSize: '20px' }}>ブログのトピック</Typography>
+            <MUIBox sx={{ width: '100%' }}>
               <FormControl fullWidth>
-                <Select
-                  value={blogTopic}
-                  onChange={onChangeBlogTopic}
-                >
-                  <MenuItem value='技術'>技術</MenuItem>
-                  <MenuItem value='社会'>社会</MenuItem>
-                  <MenuItem value='音楽'>音楽</MenuItem>
-                  <MenuItem value='スポーツ'>スポーツ</MenuItem>
+                <Select value={blogTopic} onChange={onChangeBlogTopic}>
+                  <MenuItem value="技術">技術</MenuItem>
+                  <MenuItem value="社会">社会</MenuItem>
+                  <MenuItem value="音楽">音楽</MenuItem>
+                  <MenuItem value="スポーツ">スポーツ</MenuItem>
                 </Select>
               </FormControl>
             </MUIBox>
@@ -173,20 +156,19 @@ const BlogHeader = () => {
 
           <Button
             onClick={onCreateNewBlog}
-            variant='contained'
-            color='success'
+            variant="contained"
+            color="success"
             sx={{
-              marginLeft: "25%",
-              marginTop: "7.5%",
-              marginBottom: "5%",
-              width: "50%",
-              height: "10%",
-              fontSize: "18px",
+              marginLeft: '25%',
+              marginTop: '7.5%',
+              marginBottom: '5%',
+              width: '50%',
+              height: '10%',
+              fontSize: '18px',
             }}
           >
             新規ブログを追加
           </Button>
-
         </MUIBox>
       </Modal>
     </>

@@ -3,8 +3,8 @@ import { styled } from '@material-ui/styles'
 import { Box } from '@mui/system'
 import BlogSocialInfo from './BlogSocialInfo'
 import { useStorage } from '../../hooks'
-import { blogList } from '../../api/blogApi';
-import { Typography as MUITypograpgy } from '@mui/material';
+import { blogList } from '../../api/blogApi'
+import { Typography as MUITypograpgy } from '@mui/material'
 
 const GridContainerStyle = styled(Grid)(({ theme }) => ({
   // border: "1px solid",
@@ -129,7 +129,7 @@ const NewBoxStyle = styled(Box)(({ theme }) => ({
 }))
 
 const Blogs = () => {
-  const [blogs, setBlogs] = useStorage('blogs', blogList);
+  const [blogs, setBlogs] = useStorage('blogs', blogList)
   return (
     <GridContainerStyle container spacing={3}>
       {blogs.map((el, idx) => (
@@ -154,7 +154,7 @@ const Blogs = () => {
               >
                 <Avatar variant="circular" src={`https://i.pravatar.cc/11${idx}`} alt={el.title} />
 
-                <Typography className="dateTime" variant="h7">
+                <Typography className="dateTime" variant="caption">
                   {el.dateTime}
                 </Typography>
 
@@ -170,10 +170,13 @@ const Blogs = () => {
                 textAlign="center"
                 fontWeight="bold"
                 color={
-                  el.topic === "音楽" ?
-                    '#1E90FF' : el.topic === "技術" ?
-                      'green' : el.topic === "社会" ?
-                        'orange' : 'red'
+                  el.topic === '音楽'
+                    ? '#1E90FF'
+                    : el.topic === '技術'
+                    ? 'green'
+                    : el.topic === '社会'
+                    ? 'orange'
+                    : 'red'
                 }
               >
                 {el.topic}

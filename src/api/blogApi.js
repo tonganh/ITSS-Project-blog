@@ -1,0 +1,73 @@
+// list of the items/blogs
+export const blogList = [
+  {
+    dateTime: '2021年　6月　1日',
+    title: 'Elon Musk が Twitter を買収',
+    path: '#',
+    topic: "技術",
+    social: { comment: '76.46k', views: '90.58k', share: '77.89k' },
+  },
+  {
+    dateTime: '2021年　5月　25日',
+    title: 'ベトナムの男性サッカーがタイに優勝',
+    path: '#',
+    topic: "スポーツ",
+    social: { comment: '76.46k', views: '90.58k', share: '77.89k' },
+  },
+  {
+    dateTime: '2021年　3月　25日',
+    title: '「レモン」の歌がグローバル有名',
+    path: '#',
+    topic: "音楽",
+    social: { comment: '76.46k', views: '90.58k', share: '77.89k' },
+  },
+  {
+    dateTime: '2021年　5月　18日',
+    title: 'ロシアとウクライナの戦争',
+    topic: "社会",
+    path: '#',
+    social: { comment: '76.46k', views: '90.58k', share: '77.89k' },
+  },
+  {
+    dateTime: '2021年　5月　18日',
+    title: '日本で留学する',
+    topic: "社会",
+    path: '#',
+    social: { comment: '76.46k', views: '90.58k', share: '77.89k' },
+  },
+  {
+    dateTime: '2024年　2月　18日',
+    title: 'Iphone18販売し始め',
+    topic: "技術",
+    path: '#',
+    social: { comment: '76.46k', views: '90.58k', share: '77.89k' },
+  },
+  {
+    dateTime: '2023年　4月　18日',
+    title: 'Website上の広告設定',
+    topic: "技術",
+    path: '#',
+    social: { comment: '76.46k', views: '90.58k', share: '77.89k' },
+  },
+  {
+    dateTime: '2022年　4月　3日',
+    title: 'アジア旧暦新年',
+    topic: "社会",
+    path: '#',
+    social: { comment: '76.46k', views: '90.58k', share: '77.89k' },
+  },
+  {
+    dateTime: '2022年　8月　9日',
+    title: '8月の大人気の韓流POP歌(BTS, BlackPink)',
+    path: '#',
+    topic: "音楽",
+    social: { comment: '76.46k', views: '90.58k', share: '77.89k' },
+  },
+  {
+    dateTime: '2022年　12月　7日',
+    title: '2023 ワールドカップ カーターで開催',
+    path: '#',
+    topic: "スポーツ",
+    social: { comment: '76.46k', views: '90.58k', share: '77.89k' },
+  },
+]
